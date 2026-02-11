@@ -22,5 +22,3 @@ def sol(a,b):
     if a.find(b) == -1:
         return -1        
     return time
-
-print(sol("abc","cabcabca"))
