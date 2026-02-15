@@ -114,16 +114,18 @@
 
 **Summary Table**
 
-**Question | Difficulty | Time Complexity | Space Complexity | Topic**  
-**\---------|------------|-----------------|------------------|-------**  
-**Q14      | Easy       | O(S)            | O(1)             | String Matching**  
-**Q28      | Easy       | O(n\*m)          | O(1)             | String Search**  
-**Q38      | Medium     | O(2^n)          | O(2^n)           | String Generation**  
-**Q165     | Medium     | O(max(n,m))     | O(n+m)           | Version Comparison**  
-**Q242     | Easy       | O(n+m)          | O(1)             | Frequency Counting**  
-**Q686     | Medium     | O(n\*m)          | O(1)             | Pattern Matching**  
-**Q686\_2   | Medium     | O(k\*n)          | O(k\*n)           | Pattern Matching**  
-**Q1312    | Hard       | O(n)            | O(1)             | DP (Incomplete)**
+| Question | Difficulty | Time Complexity | Space Complexity | Topic |
+|----------|-----------|-----------------|------------------|-------|
+| Q14      | Easy      | O(S)            | O(1)             | String Matching |
+| Q28      | Easy      | O(n*m)          | O(1)             | String Search |
+| Q38      | Medium    | O(2^n)          | O(2^n)           | String Generation |
+| Q165     | Medium    | O(max(n,m))     | O(n+m)           | Version Comparison |
+| Q242     | Easy      | O(n+m)          | O(1)             | Frequency Counting |
+| Q686     | Medium    | O(n*m)          | O(1)             | Pattern Matching |
+| Q686_2   | Medium    | O(k*n)          | O(k*n)           | Pattern Matching |
+| Q1312    | Hard      | O(n)            | O(1)             | DP (Incomplete) |
+
+
 
 **\===============================================================================**
 
