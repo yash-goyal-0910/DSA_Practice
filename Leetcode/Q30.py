@@ -1,5 +1,5 @@
 '''
-Question topic - Array
+Question topic - Sliding Window
 Question link - https://leetcode.com/problems/substring-with-concatenation-of-all-words/
 '''
 # Sol - 
