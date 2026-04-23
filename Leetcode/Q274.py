@@ -1,22 +1,17 @@
 '''
-Question topic - Array
-Question link - 
+Question topic - Array,sort
+Question link - https://leetcode.com/problems/h-index/description
 '''
 # Sol - 
-def hIndex(citations):
+def hIndex(citations: List[int]) -> int:
     n = len(citations)
+    citations.sort(reverse=True)
+    i = 0
     ans = 0
-    if n == 1:
-        if citations[0] >= 1:
-            return 1
+    while i < n:
+        if ans < citations[i]:
+            ans += 1
         else:
-            return 0
-    citations = sorted(citations)
-    for i,x in enumerate(citations):
-        if n - i >= x:
-            ans = x
-            max_posi = n - i
-        else:
-            return min(ans,max_posi)
-        
-print(hIndex([4,0,6,1,4]))
+            break
+        i += 1
+    return ans 
