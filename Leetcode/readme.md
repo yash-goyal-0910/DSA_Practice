@@ -474,12 +474,221 @@
 **Space Complexity: O(1) standard integers.**
 
 ===============================================================================
+
+**Q2: Add Two Numbers**
+**Topic: Linked List**
+**Link: https://leetcode.com/problems/add-two-numbers**
+
+**Approach:**
+**Iterates through both linked lists simultaneously, adding the values of the nodes along with a carry from the previous sum. Constructs a new linked list by mutating one of the existing lists (in-place modification logic) and appending new nodes if necessary when one list is exhausted or a carry remains.**
+
+**Time Complexity: O(max(N, M)) where N and M are the lengths of the two linked lists.**
+
+**Space Complexity: O(max(N, M)) required to construct the resulting linked list via new nodes or maintaining the references.**
+
+===============================================================================
+
+**Q36: Valid Sudoku**
+**Topic: Array / Matrix**
+**Link: https://leetcode.com/problems/valid-sudoku**
+
+**Approach:**
+**Traverses the 9x9 board multiple times to validate rows, columns, and 3x3 sub-boxes. Uses an array `ls` of size 9 as a frequency counter to ensure no digits repeat within the specified constraints.**
+
+**Time Complexity: O(1) because the board size is strictly 9x9, making the number of operations constant.**
+
+**Space Complexity: O(1) for the frequency counting array of fixed size 9.**
+
+===============================================================================
+
+**Q54: Spiral Matrix**
+**Topic: Array / Matrix**
+**Link: https://leetcode.com/problems/spiral-matrix**
+
+**Approach:**
+**Simulates the spiral traversal by manipulating four boundary variables representing the top, bottom, left, and right limits. It collects elements in right, down, left, and up directions continuously shrinking the boundaries until all elements are collected.**
+
+**Time Complexity: O(N * M) where N and M are the dimensions of the matrix, as every element is visited exactly once.**
+
+**Space Complexity: O(N * M) for the resulting output list holding the traversed elements.**
+
+===============================================================================
+
+**Q62: Unique Paths**
+**Topic: DP / Grid**
+**Link: https://leetcode.com/problems/unique-paths**
+
+**Approach:**
+**Uses a top-down dynamic programming approach with memoization. A recursive function calculates the number of ways to reach the bottom-right corner by summing up the ways from the right and bottom cells. The results are cached in a 2D `dp` grid to avoid redundant calculations.**
+
+**Time Complexity: O(M * N) since each state (x, y) is evaluated only once.**
+
+**Space Complexity: O(M * N) for the `dp` memoization grid and the recursion call stack depth.**
+
+===============================================================================
+
+**Q63: Unique Paths II**
+**Topic: Array / DP**
+**Link: https://leetcode.com/problems/unique-paths-ii**
+
+**Approach:**
+**Similar to Unique Paths, but incorporates obstacle checks. Uses top-down dynamic programming with a 2D memoization grid. If an obstacle is encountered at the current cell, it returns 0 valid paths.**
+
+**Time Complexity: O(M * N) where M and N are the grid dimensions.**
+
+**Space Complexity: O(M * N) for the recursion tree and the `dp` matrix.**
+
+===============================================================================
+
+**Q70: Climbing Stairs**
+**Topic: DP**
+**Link: https://leetcode.com/problems/climbing-stairs**
+
+**Approach:**
+**Top-down dynamic programming with memoization to find the number of ways to climb `n` stairs. Base cases are handled directly, and recursive results for taking 1 or 2 steps are cached in a list.**
+
+**Time Complexity: O(N) as each step configuration is computed exactly once.**
+
+**Space Complexity: O(N) for the recursive call stack and the memoization list.**
+
+===============================================================================
+
+**Q72: Edit Distance**
+**Topic: DP / String**
+**Link: https://leetcode.com/problems/edit-distance**
+
+**Approach:**
+**Uses memoized top-down recursion to compute the minimum operations (insert, delete, replace) required to convert `word1` to `word2`. Computes the cost of matching or modifying characters dynamically from the end of the strings to the beginning.**
+
+**Time Complexity: O(M * N) where M and N are the lengths of the two strings.**
+
+**Space Complexity: O(M * N) for the 2D memoization table caching the distances.**
+
+===============================================================================
+
+**Q138: Copy List with Random Pointer**
+**Topic: Linked List**
+**Link: https://leetcode.com/problems/copy-list-with-random-pointer**
+
+**Approach:**
+**Uses a dictionary to map the old nodes to the newly created nodes. Two passes are made: the first creates the nodes and sets up the `next` pointers while caching the mappings, and the second assigns the `random` pointers based on the cached references.**
+
+**Time Complexity: O(N) where N is the number of nodes in the linked list.**
+
+**Space Complexity: O(N) for the dictionary mapping old nodes to new nodes.**
+
+===============================================================================
+
+**Q139: Word Break**
+**Topic: DP / String**
+**Link: https://leetcode.com/problems/word-break**
+
+**Approach:**
+**Recursive top-down DP with memoization. It iterates through the word dictionary, searching for matching substrings within the current target string, and recursively checks the remaining split portions.**
+
+**Time Complexity: O(N^2 * W) roughly, where N is the length of the string and W is the dictionary size. String splitting and `find()` add overhead.**
+
+**Space Complexity: O(N) depth for the recursion call stack and dictionary for memoizing string states.**
+
+===============================================================================
+
+**Q141: Linked List Cycle**
+**Topic: Linked List**
+**Link: https://leetcode.com/problems/linked-list-cycle**
+
+**Approach:**
+**Uses Floyd's Cycle-Finding Algorithm (Tortoise and Hare). Two pointers traverse the linked list at different speeds (one step and two steps). If there is a cycle, the faster pointer will eventually meet the slower pointer.**
+
+**Time Complexity: O(N) as the fast pointer will lap the slow pointer in a finite number of steps if a cycle exists.**
+
+**Space Complexity: O(1) since only two pointers are used.**
+
+===============================================================================
+
+**Q198: House Robber**
+**Topic: DP / Array**
+**Link: https://leetcode.com/problems/house-robber**
+
+**Approach:**
+**Top-down dynamic programming using a recursion tree with an array for memoization. At each house, it calculates the maximum of robbing the current house and the one two/three steps prior.**
+
+**Time Complexity: O(N) where N is the number of houses, as each subproblem is evaluated once.**
+
+**Space Complexity: O(N) for the `dp` memoization array.**
+
+===============================================================================
+
+**Q300: Longest Increasing Subsequence**
+**Topic: Array / DP**
+**Link: https://leetcode.com/problems/longest-increasing-subsequence**
+
+**Approach:**
+**Top-down memoized recursion iterating backward through the array. For each element, it checks all preceding elements that are strictly smaller to build up the longest valid subsequence ending at that index.**
+
+**Time Complexity: O(N^2) due to the nested iteration examining previous sequence candidates for every element.**
+
+**Space Complexity: O(N) for the recursion stack and the memoization list.**
+
+===============================================================================
+
+**Q322: Coin Change**
+**Topic: Array / DP**
+**Link: https://leetcode.com/problems/coin-change**
+
+**Approach:**
+**Uses a top-down dynamic programming strategy. For a given target amount, the algorithm tries every coin denomination and recursively seeks the minimum number of coins for the remainder, memoizing intermediate states.**
+
+**Time Complexity: O(A * C) where A is the amount and C is the number of coin denominations.**
+
+**Space Complexity: O(A) for the recursion stack tree depth and memoization array.**
+
+===============================================================================
+
+**Q347: Top K Frequent Elements**
+**Topic: Array / Hash**
+**Link: https://leetcode.com/problems/top-k-frequent-elements**
+
+**Approach:**
+**Builds a frequency dictionary for all elements in the array. The dictionary is then explicitly sorted by its values in ascending order, and the last `k` keys are extracted to find the most frequent elements.**
+
+**Time Complexity: O(N log N) dominated by the sorting step on the frequency dictionary.**
+
+**Space Complexity: O(N) for the dictionary storing element counts.**
+
+===============================================================================
+
+**Q509: Fibonacci Number**
+**Topic: Array / DP**
+**Link: https://leetcode.com/problems/fibonacci-number**
+
+**Approach:**
+**Implements a recursive solution with a `dp` array for memoization, avoiding recalculating previous Fibonacci sequence numbers.**
+
+**Time Complexity: O(N) due to caching.**
+
+**Space Complexity: O(N) for the depth of recursion and the caching array.**
+
+===============================================================================
+
+**Q746: Min Cost Climbing Stairs**
+**Topic: Array / DP**
+**Link: https://leetcode.com/problems/min-cost-climbing-stairs**
+
+**Approach:**
+**Uses top-down dynamic programming to evaluate the minimum cost required to reach the top. It calculates the cost recursively considering taking 1 step or 2 steps forward, caching values in a `dp` array.**
+
+**Time Complexity: O(N) since each stair's minimum cost path is computed exactly once.**
+
+**Space Complexity: O(N) for the memoization array and recursion call stack.**
+
+===============================================================================
 ===============================================================================
 
 **Summary Table**
 
 | Question | Difficulty | Time Complexity | Space Complexity | Topic |
 |----------|-----------|-----------------|------------------|-------|
+| Q2  | Medium | O(max(N,M)) | O(max(N,M))  | Linked List |
 | Q3  | Medium | O(N^2) | O(N)  | Sliding Window |
 | Q11  | Medium | O(n)  | O(1)  | Two Pointer |
 | Q12  | Medium | O(log N) | O(log N)  | String/Math |
@@ -491,10 +700,16 @@
 | Q27 | Easy | O(n) | O(1) | Two Pointer |
 | Q28 | Easy | O(n*m) | O(1) | String Search |
 | Q30  | Hard | O(N*M) | O(W)  | Sliding Window |
+| Q36  | Medium | O(1) | O(1)  | Array/Matrix |
 | Q38 | Medium | O(2^n) | O(2^n) | String Generation |
 | Q42  | Hard | O(N^2) | O(N)  | Array/Two Pointers |
 | Q45  | Medium | O(N) | O(1)  | Greedy |
+| Q54  | Medium | O(N*M) | O(N*M)  | Array/Matrix |
 | Q55 | Medium | O(n) | O(1) | Greedy |
+| Q62  | Medium | O(M*N) | O(M*N)  | DP/Grid |
+| Q63  | Medium | O(M*N) | O(M*N)  | Array/DP |
+| Q70  | Easy | O(N) | O(N)  | DP |
+| Q72  | Medium | O(M*N) | O(M*N)  | DP/String |
 | Q76  | Hard | O(N) | O(K)  | Sliding Window |
 | Q80 | Medium | O(n) | O(1) | Two Pointer |
 | Q88 | Easy | O(m+n) | O(1) | Merge |
@@ -503,18 +718,27 @@
 | Q125  | Easy | O(N) | O(N)  | String |
 | Q134  | Medium | O(N) | O(1)  | Greedy |
 | Q135  | Hard | O(N) | O(N)  | Greedy |
+| Q138  | Medium | O(N) | O(N)  | Linked List |
+| Q139  | Medium | O(N^2 * W) | O(N)  | DP/String |
+| Q141  | Easy | O(N) | O(1)  | Linked List |
 | Q165 | Medium | O(max(n,m)) | O(n+m) | Version Comparison |
 | Q167  | Medium | O(N) | O(1)  | Two Pointers |
 | Q169 | Easy | O(n) | O(1) | Voting Algorithm |
 | Q189 | Medium | O(n*k) | O(1) | Array Rotation |
+| Q198  | Medium | O(N) | O(N)  | DP/Array |
 | Q209  | Medium | O(N) | O(1)  | Sliding Window |
 | Q238  | Medium | O(N) | O(N)  | Array/Prefix Sum |
 | Q242 | Easy | O(n+m) | O(1) | Frequency Counting |
 | Q274  | Medium | O(N log N) | O(N)  | Array/Sorting |
+| Q300  | Medium | O(N^2) | O(N)  | Array/DP |
+| Q322  | Medium | O(A * C) | O(A)  | Array/DP |
+| Q347  | Medium | O(N log N) | O(N)  | Array/Hash |
 | Q380  | Medium | O(1) | O(N)  | Array/OOP |
 | Q392  | Easy | O(N) | O(1)  | Two Pointers |
+| Q509  | Easy | O(N) | O(N)  | Array/DP |
 | Q686 | Medium | O(n*m) | O(1) | Pattern Matching |
 | Q686_2 | Medium | O(k*n) | O(k*n) | Pattern Matching |
+| Q746  | Easy | O(N) | O(N)  | Array/DP |
 | Q1312 | Hard | O(n) | O(1) | DP (Incomplete) |
 
 ===============================================================================
